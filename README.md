@@ -30,7 +30,7 @@ A full-stack application for managing Star Wars starships with user authenticati
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:phillszymanski/GoEngineerExercise.git
 cd GoEngineerExercise
 ```
 
@@ -113,10 +113,13 @@ Coverage report will be in `StarshipClient/coverage/index.html`
 
 1. Start both the backend API and frontend client (see Setup Instructions above)
 2. Navigate to `http://localhost:5173`
-3. Register a new account:
+3. a) Register a new account:
    - Click "Don't have an account? Register"
    - Enter username, email, and password
    - Click "Register"
+   b) Use the admin credentials:
+   - Email: admin@starshipapi.com
+   - Password: password
 4. You'll be automatically logged in after registration
 
 ### Features
@@ -125,30 +128,7 @@ Coverage report will be in `StarshipClient/coverage/index.html`
 - **Starship Management**: View, add, edit, and delete starships
 - **Responsive UI**: Built with Tailwind CSS for mobile and desktop
 - **Protected Routes**: Automatic redirect to login for unauthenticated users
-
-## 🗂️ Project Structure
-
-```
-GoEngineerExercise/
-├── StarshipAPI/                 # .NET Web API Backend
-│   ├── Controllers/            # API endpoints
-│   ├── Services/               # Business logic
-│   ├── Data/                   # EF Core DbContext
-│   ├── Models/                 # Data models
-│   ├── Interfaces/             # Service interfaces
-│   └── Migrations/             # Database migrations
-│
-├── StarshipAPI.Tests/          # Backend unit tests
-│   └── *Tests.cs              # xUnit test files
-│
-└── StarshipClient/             # React Frontend
-    ├── src/
-    │   ├── components/        # React components
-    │   ├── api/              # API service layer
-    │   ├── hooks/            # Custom React hooks
-    │   └── models/           # TypeScript types
-    └── *.test.tsx            # Vitest test files
-```
+- **Accessibility**: Semantic HTML, form/ARIA labels, focus indicators, etc.
 
 ## 🔧 Configuration
 
@@ -177,7 +157,7 @@ GoEngineerExercise/
 The project maintains high test coverage:
 
 - **Backend**:  97% line coverage, 90% branch coverage (Controllers, Services, Data Layer)
-- **Frontend**: 98.68% statement coverage, 96.15% branch coverage (Components, Hooks, Services)
+- **Frontend**: 97% statement coverage, 96% branch coverage (Components, Hooks, Services)
 
 Tests focus on:
 - Unit tests for individual components/services
