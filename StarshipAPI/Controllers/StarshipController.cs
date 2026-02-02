@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StarshipAPI.Models;
+using StarshipAPI.Services;
 
 namespace StarshipAPI.Controllers
 {
@@ -11,11 +12,16 @@ namespace StarshipAPI.Controllers
     {
         private readonly IStarshipService _starshipService;
         private readonly ILogger<StarshipController> _logger;
+        private readonly IAiSearchService _aiSearchService;
 
-        public StarshipController(IStarshipService starshipService, ILogger<StarshipController> logger)
+        public StarshipController(
+            IStarshipService starshipService,
+            ILogger<StarshipController> logger,
+            IAiSearchService aiSearchService)
         {
             _starshipService = starshipService;
             _logger = logger;
+            _aiSearchService = aiSearchService;
         }
 
         [HttpGet("GetAllStarships")]
@@ -46,6 +52,14 @@ namespace StarshipAPI.Controllers
             _logger.LogInformation($"Deleting starship with id={id}");
             await _starshipService.DeleteStarshipAsync(id);
             return NoContent();
+        }
+
+        [HttpPost("search")]
+        public async Task<ActionResult<SearchResult>> SearchStarships([FromBody] SearchRequest request) 
+        {
+            var allStarships = await _starshipService.GetAllStarshipsAsync();
+            var results = await _aiSearchService.SearchAsync(request.Query, allStarships);
+            return Ok(results);
         }
     }
 }

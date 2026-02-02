@@ -213,11 +213,12 @@ var assemblies = [
   {
     "name": "StarshipAPI",
     "classes": [
-      { "name": "StarshipAPI.Controllers.AuthController", "rp": "StarshipAPI_AuthController.html", "cl": 37, "ucl": 0, "cal": 37, "tl": 113, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "StarshipAPI.Controllers.StarshipController", "rp": "StarshipAPI_StarshipController.html", "cl": 5, "ucl": 0, "cal": 5, "tl": 51, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "StarshipAPI.Controllers.AuthController", "rp": "StarshipAPI_AuthController.html", "cl": 26, "ucl": 0, "cal": 26, "tl": 113, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "StarshipAPI.Controllers.StarshipController", "rp": "StarshipAPI_StarshipController.html", "cl": 9, "ucl": 0, "cal": 9, "tl": 65, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "StarshipAPI.Services.AiSearchService", "rp": "StarshipAPI_AiSearchService.html", "cl": 47, "ucl": 0, "cal": 47, "tl": 176, "cb": 14, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "StarshipAPI.Services.AuthService", "rp": "StarshipAPI_AuthService.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 93, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "StarshipAPI.Services.JwtService", "rp": "StarshipAPI_JwtService.html", "cl": 45, "ucl": 0, "cal": 45, "tl": 72, "cb": 3, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "StarshipDbContext", "rp": "StarshipAPI_StarshipDbContext.html", "cl": 46, "ucl": 4, "cal": 50, "tl": 66, "cb": 16, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "StarshipDbContext", "rp": "StarshipAPI_StarshipDbContext.html", "cl": 46, "ucl": 4, "cal": 50, "tl": 66, "cb": 12, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "StarshipSeeder", "rp": "StarshipAPI_StarshipSeeder.html", "cl": 5, "ucl": 4, "cal": 9, "tl": 70, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
       { "name": "StarshipService", "rp": "StarshipAPI_StarshipService.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 59, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},

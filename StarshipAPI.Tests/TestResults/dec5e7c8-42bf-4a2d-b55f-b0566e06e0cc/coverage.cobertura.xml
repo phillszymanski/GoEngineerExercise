@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.9473" branch-rate="0.8332999999999999" version="1.9" timestamp="1770013824" lines-covered="144" lines-valid="152" branches-covered="15" branches-valid="18">
+<coverage line-rate="0.9605" branch-rate="0.8055" version="1.9" timestamp="1770069303" lines-covered="195" lines-valid="203" branches-covered="29" branches-valid="36">
   <sources>
     <source>C:\Repos\GoEngineerExercise\StarshipAPI\</source>
   </sources>
   <packages>
-    <package name="StarshipAPI" line-rate="0.9473" branch-rate="0.8332999999999999" complexity="30">
+    <package name="StarshipAPI" line-rate="0.9605" branch-rate="0.8055" complexity="50">
       <classes>
         <class name="StarshipDbContext" filename="Data\StarshipDbContext.cs" line-rate="0.92" branch-rate="0.8571" complexity="16">
           <methods>
@@ -228,6 +228,170 @@
             <line number="9" hits="10" branch="False" />
             <line number="10" hits="10" branch="False" />
             <line number="11" hits="10" branch="False" />
+          </lines>
+        </class>
+        <class name="StarshipAPI.Services.AiSearchService" filename="Services\AISearchService.cs" line-rate="1" branch-rate="0.7777" complexity="20">
+          <methods>
+            <method name="FallbackSearch" signature="(System.String,System.Collections.Generic.List`1&lt;StarshipAPI.Models.Starship&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="123" hits="6" branch="False" />
+                <line number="124" hits="6" branch="False" />
+                <line number="125" hits="6" branch="False" />
+                <line number="126" hits="6" branch="False" />
+                <line number="127" hits="6" branch="False" />
+                <line number="128" hits="6" branch="False" />
+                <line number="129" hits="6" branch="False" />
+                <line number="130" hits="6" branch="False" />
+                <line number="131" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="ExtractJsonArray" signature="(System.String)" line-rate="1" branch-rate="0.8332999999999999" complexity="6">
+              <lines>
+                <line number="134" hits="4" branch="False" />
+                <line number="135" hits="4" branch="False" />
+                <line number="136" hits="4" branch="False" />
+                <line number="138" hits="4" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="21" type="jump" coverage="100%" />
+                    <condition number="32" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="139" hits="3" branch="False" />
+                <line number="140" hits="3" branch="False" />
+                <line number="142" hits="3" branch="False" />
+                <line number="143" hits="3" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="57" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="145" hits="1" branch="False" />
+                <line number="146" hits="1" branch="False" />
+                <line number="147" hits="1" branch="False" />
+                <line number="148" hits="1" branch="False" />
+                <line number="151" hits="1" branch="False" />
+                <line number="152" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="GetUserFriendlyErrorMessage" signature="(System.String)" line-rate="1" branch-rate="0.75" complexity="12">
+              <lines>
+                <line number="155" hits="5" branch="False" />
+                <line number="157" hits="5" branch="False" />
+                <line number="158" hits="5" branch="False" />
+                <line number="159" hits="4" branch="True" condition-coverage="50% (2/4)">
+                  <conditions>
+                    <condition number="11" type="jump" coverage="50%" />
+                    <condition number="27" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="160" hits="4" branch="False" />
+                <line number="161" hits="4" branch="True" condition-coverage="100% (6/6)">
+                  <conditions>
+                    <condition number="57" type="jump" coverage="100%" />
+                    <condition number="70" type="jump" coverage="100%" />
+                    <condition number="83" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="162" hits="4" branch="False" />
+                <line number="163" hits="1" branch="False" />
+                <line number="164" hits="1" branch="False" />
+                <line number="165" hits="1" branch="False" />
+                <line number="166" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="123" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
+                <line number="167" hits="4" branch="False" />
+                <line number="169" hits="1" branch="False" />
+                <line number="170" hits="1" branch="False" />
+                <line number="171" hits="1" branch="False" />
+                <line number="172" hits="1" branch="False" />
+                <line number="173" hits="1" branch="False" />
+                <line number="174" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(Microsoft.Extensions.Configuration.IConfiguration,System.Net.Http.HttpClient,Microsoft.Extensions.Logging.ILogger`1&lt;StarshipAPI.Services.AiSearchService&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="10" branch="False" />
+                <line number="14" hits="10" branch="False" />
+                <line number="15" hits="10" branch="False" />
+                <line number="16" hits="10" branch="False" />
+                <line number="17" hits="10" branch="False" />
+                <line number="18" hits="10" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="123" hits="6" branch="False" />
+            <line number="124" hits="6" branch="False" />
+            <line number="125" hits="6" branch="False" />
+            <line number="126" hits="6" branch="False" />
+            <line number="127" hits="6" branch="False" />
+            <line number="128" hits="6" branch="False" />
+            <line number="129" hits="6" branch="False" />
+            <line number="130" hits="6" branch="False" />
+            <line number="131" hits="6" branch="False" />
+            <line number="134" hits="4" branch="False" />
+            <line number="135" hits="4" branch="False" />
+            <line number="136" hits="4" branch="False" />
+            <line number="138" hits="4" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="21" type="jump" coverage="100%" />
+                <condition number="32" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="139" hits="3" branch="False" />
+            <line number="140" hits="3" branch="False" />
+            <line number="142" hits="3" branch="False" />
+            <line number="143" hits="3" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="57" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="145" hits="1" branch="False" />
+            <line number="146" hits="1" branch="False" />
+            <line number="147" hits="1" branch="False" />
+            <line number="148" hits="1" branch="False" />
+            <line number="151" hits="1" branch="False" />
+            <line number="152" hits="4" branch="False" />
+            <line number="155" hits="5" branch="False" />
+            <line number="157" hits="5" branch="False" />
+            <line number="158" hits="5" branch="False" />
+            <line number="159" hits="4" branch="True" condition-coverage="50% (2/4)">
+              <conditions>
+                <condition number="11" type="jump" coverage="50%" />
+                <condition number="27" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="160" hits="4" branch="False" />
+            <line number="161" hits="4" branch="True" condition-coverage="100% (6/6)">
+              <conditions>
+                <condition number="57" type="jump" coverage="100%" />
+                <condition number="70" type="jump" coverage="100%" />
+                <condition number="83" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="162" hits="4" branch="False" />
+            <line number="163" hits="1" branch="False" />
+            <line number="164" hits="1" branch="False" />
+            <line number="165" hits="1" branch="False" />
+            <line number="166" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="123" type="jump" coverage="50%" />
+              </conditions>
+            </line>
+            <line number="167" hits="4" branch="False" />
+            <line number="169" hits="1" branch="False" />
+            <line number="170" hits="1" branch="False" />
+            <line number="171" hits="1" branch="False" />
+            <line number="172" hits="1" branch="False" />
+            <line number="173" hits="1" branch="False" />
+            <line number="174" hits="5" branch="False" />
+            <line number="13" hits="10" branch="False" />
+            <line number="14" hits="10" branch="False" />
+            <line number="15" hits="10" branch="False" />
+            <line number="16" hits="10" branch="False" />
+            <line number="17" hits="10" branch="False" />
+            <line number="18" hits="10" branch="False" />
           </lines>
         </class>
         <class name="StarshipAPI.Services.AuthService" filename="Services\AuthService.cs" line-rate="1" branch-rate="1" complexity="2">
@@ -466,22 +630,30 @@
         </class>
         <class name="StarshipAPI.Controllers.StarshipController" filename="Controllers\StarshipController.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
-            <method name=".ctor" signature="(IStarshipService,Microsoft.Extensions.Logging.ILogger`1&lt;StarshipAPI.Controllers.StarshipController&gt;)" line-rate="1" branch-rate="1" complexity="1">
+            <method name=".ctor" signature="(IStarshipService,Microsoft.Extensions.Logging.ILogger`1&lt;StarshipAPI.Controllers.StarshipController&gt;,StarshipAPI.Services.IAiSearchService)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="8" branch="False" />
-                <line number="16" hits="8" branch="False" />
                 <line number="17" hits="8" branch="False" />
                 <line number="18" hits="8" branch="False" />
                 <line number="19" hits="8" branch="False" />
+                <line number="20" hits="8" branch="False" />
+                <line number="21" hits="8" branch="False" />
+                <line number="22" hits="8" branch="False" />
+                <line number="23" hits="8" branch="False" />
+                <line number="24" hits="8" branch="False" />
+                <line number="25" hits="8" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="15" hits="8" branch="False" />
-            <line number="16" hits="8" branch="False" />
             <line number="17" hits="8" branch="False" />
             <line number="18" hits="8" branch="False" />
             <line number="19" hits="8" branch="False" />
+            <line number="20" hits="8" branch="False" />
+            <line number="21" hits="8" branch="False" />
+            <line number="22" hits="8" branch="False" />
+            <line number="23" hits="8" branch="False" />
+            <line number="24" hits="8" branch="False" />
+            <line number="25" hits="8" branch="False" />
           </lines>
         </class>
       </classes>

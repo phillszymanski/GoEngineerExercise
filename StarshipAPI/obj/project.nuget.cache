@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ELqOdb0jMjM=",
+  "dgSpecHash": "UM3A4vjKH44=",
   "success": true,
-  "projectFilePath": "C:\\Repos\\GoEngineerExercise\\starshipapi\\StarshipAPI.csproj",
+  "projectFilePath": "C:\\Repos\\GoEngineerExercise\\StarshipAPI\\StarshipAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Phillip\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Phillip\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

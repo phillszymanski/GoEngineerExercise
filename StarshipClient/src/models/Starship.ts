@@ -35,3 +35,9 @@ export interface StarshipTableProps {
     onEdit: (starship: Starship) => void;
     onDelete: (id: number) => void;
 }
+
+export interface SearchResult {
+  results: Starship[]
+  usedFallback: boolean
+  fallbackReason?: string
+}

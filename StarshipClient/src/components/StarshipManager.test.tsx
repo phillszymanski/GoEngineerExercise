@@ -5,11 +5,21 @@ import { useAuth } from './AuthProvider'
 import { useStarships } from '../hooks/useStarships'
 import * as starshipService from '../api/starshipService'
 import userEvent from '@testing-library/user-event'
+import { searchStarshipsWithAI } from '../api/aiSearchService'
+import toast from 'react-hot-toast'
 
 // Mock dependencies
 vi.mock('./AuthProvider')
 vi.mock('../hooks/useStarships')
 vi.mock('../api/starshipService')
+vi.mock('../api/aiSearchService')
+
+vi.mock('react-hot-toast', () => ({
+    default: {
+        error: vi.fn(),
+        success: vi.fn()
+    }
+}))
 
 const mockUser = {
   id: 1,
@@ -178,5 +188,166 @@ describe('StarshipManager', () => {
       expect(starshipService.deleteStarship).toHaveBeenCalledWith(1)
       expect(mockRefetch).toHaveBeenCalledOnce()
     })
+  })
+
+  it('shows error toast when add fails', async () => {
+    vi.mocked(starshipService.addStarship).mockRejectedValue(new Error('Failed to add'))
+
+    renderStarshipManager()
+
+    await waitFor(() => {
+        expect(screen.queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    const addButton = screen.getByRole('button', { name: /add a starship/i })
+    await userEvent.click(addButton)
+
+    await userEvent.type(screen.getByLabelText(/name/i), 'Test Name')
+    await userEvent.type(screen.getByLabelText(/model/i), 'Test Model')
+    await userEvent.type(screen.getByLabelText(/manufacturer/i), 'Test Manufacturer')
+
+    const submitButton = screen.getByRole('button', {name: /add starship/i})
+    await userEvent.click(submitButton)
+
+    await waitFor(() => {
+        expect(toast.error).toHaveBeenCalledWith(expect.stringContaining('An error occurred while adding the starship'))
+    })
+  })
+
+  it('shows error toast when edit fails', async () => {
+    vi.mocked(starshipService.editStarship).mockRejectedValue(new Error('Failed to edit'))
+
+    renderStarshipManager()
+
+    await waitFor(() => {
+        expect(screen.queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    const editButton = screen.getByRole('button', { name: /edit/i })
+    await userEvent.click(editButton)
+
+    expect(screen.getByRole('heading', { name: 'Edit Starship' })).toBeInTheDocument()
+
+    const nameInput = screen.getByLabelText(/name/i)
+    await userEvent.clear(nameInput)
+    await userEvent.type(nameInput, 'Test Model Modified')
+
+    const submitButton = screen.getByRole('button', { name: /edit starship/i })
+    await userEvent.click(submitButton)
+
+    await waitFor(() => {
+        expect(toast.error).toHaveBeenCalledWith(expect.stringContaining('An error occurred while editing the starship'))
+    })
+  })
+
+  it('shows error toast when delete fails', async () => {
+    vi.mocked(starshipService.deleteStarship).mockRejectedValue(new Error('Failed to delete'))
+
+    renderStarshipManager()
+
+    await waitFor(() => {
+        expect(screen.queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    const deleteButton = screen.getByRole('button', { name: /delete/i })
+    await userEvent.click(deleteButton)
+
+    expect(screen.getByText(/are you sure/i)).toBeInTheDocument()
+
+    const confirmButton = screen.getByRole('button', { name: /delete/i })
+    await userEvent.click(confirmButton)
+
+    await waitFor(() => {
+        expect(toast.error).toHaveBeenCalledWith(expect.stringContaining('An error occurred while deleting the starship'))
+    })
+  })
+
+  it('performs AI search and displays result', async () => {
+    const mockSearchResults = [mockStarships[0]]
+    vi.mocked(searchStarshipsWithAI).mockResolvedValueOnce(mockSearchResults)
+
+    renderStarshipManager()
+
+    await waitFor(() => {
+        expect(screen.queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    const searchInput = screen.getByPlaceholderText(/ai search/i)
+    await userEvent.type(searchInput, 'fast ships')
+
+    const searchButton = screen.getByRole('button', { name: /search/i })
+    await userEvent.click(searchButton)
+
+    await waitFor(() => {
+        expect(searchStarshipsWithAI).toHaveBeenCalledWith('fast ships')
+    })
+
+    expect(searchStarshipsWithAI).toHaveBeenCalledOnce()
+  })
+
+  it('clears seach results when button is clicked', async () => {
+    const mockSearchResults = [mockStarships[0]]
+    vi.mocked(searchStarshipsWithAI).mockResolvedValueOnce({
+        results: mockSearchResults,
+        usedFallback: false
+    })
+
+    renderStarshipManager()
+
+    await waitFor(() => {
+        expect(screen.queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    const searchInput = screen.getByPlaceholderText(/ai search/i)
+    await userEvent.type(searchInput, 'fast ships')
+
+    const searchButton = screen.getByRole('button', { name: /search/i })
+    await userEvent.click(searchButton)
+
+    await waitFor(() => {
+        expect(searchStarshipsWithAI).toHaveBeenCalledWith('fast ships')
+    })
+
+    const clearButton = screen.getByRole('button', { name: /clear/i })
+    expect(clearButton).toBeInTheDocument()
+
+    await userEvent.click(clearButton)
+
+    expect(searchInput).toHaveValue('')
+    expect(screen.queryByRole('button', { name: /clear/i })).not.toBeInTheDocument()
+  })
+
+  it('shows error toast when search fails', async () => {
+    vi.mocked(searchStarshipsWithAI).mockRejectedValue(new Error('Search failed'))
+
+    renderStarshipManager()
+
+    await waitFor(() => {
+        expect(screen.queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    const searchInput = screen.getByPlaceholderText(/ai search/i)
+    await userEvent.type(searchInput, 'fast ships')
+
+    const searchButton = screen.getByRole('button', { name: /search/i })
+    await userEvent.click(searchButton)
+
+    await waitFor(() => {
+        expect(toast.error).toHaveBeenCalledWith(expect.stringContaining('Search failed'))
+    })
+  })
+
+  it('skips search when query is empty', async () => {
+    renderStarshipManager()
+
+    await waitFor(() => {
+        expect(screen.queryByText('Loading...')).not.toBeInTheDocument()
+    })
+
+    const searchInput = screen.getByPlaceholderText(/ai search/i)
+
+    await userEvent.type(searchInput, '{Enter}')
+
+    expect(searchStarshipsWithAI).not.toHaveBeenCalled()
   })
 })

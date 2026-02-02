@@ -28,6 +28,7 @@ builder.Services.AddDbContextFactory<StarshipDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddHttpClient<StarshipSeeder>();
+builder.Services.AddHttpClient<IAiSearchService, AiSearchService>();
 builder.Services.AddScoped<IStarshipSeeder, StarshipSeeder>();
 builder.Services.AddScoped<IStarshipService, StarshipService>();
 builder.Services.AddScoped<IJwtService, JwtService>();

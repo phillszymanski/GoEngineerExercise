@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\GoEngineerExercise\\starshipapi\\StarshipAPI.csproj": {}
+    "C:\\Repos\\GoEngineerExercise\\StarshipAPI\\StarshipAPI.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\GoEngineerExercise\\starshipapi\\StarshipAPI.csproj": {
+    "C:\\Repos\\GoEngineerExercise\\StarshipAPI\\StarshipAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\GoEngineerExercise\\starshipapi\\StarshipAPI.csproj",
+        "projectUniqueName": "C:\\Repos\\GoEngineerExercise\\StarshipAPI\\StarshipAPI.csproj",
         "projectName": "StarshipAPI",
-        "projectPath": "C:\\Repos\\GoEngineerExercise\\starshipapi\\StarshipAPI.csproj",
+        "projectPath": "C:\\Repos\\GoEngineerExercise\\StarshipAPI\\StarshipAPI.csproj",
         "packagesPath": "C:\\Users\\Phillip\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\GoEngineerExercise\\starshipapi\\obj\\",
+        "outputPath": "C:\\Repos\\GoEngineerExercise\\StarshipAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

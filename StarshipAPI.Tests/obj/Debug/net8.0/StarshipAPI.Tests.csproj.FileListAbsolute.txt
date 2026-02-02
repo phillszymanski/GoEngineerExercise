@@ -459,3 +459,4 @@ C:\Repos\GoEngineerExercise\StarshipAPI.Tests\bin\Debug\net8.0\Castle.Core.dll
 C:\Repos\GoEngineerExercise\StarshipAPI.Tests\bin\Debug\net8.0\Moq.dll
 C:\Repos\GoEngineerExercise\StarshipAPI.Tests\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Repos\GoEngineerExercise\StarshipAPI.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Repos\GoEngineerExercise\StarshipAPI.Tests\obj\Debug\net8.0\StarshipAPI.Tests.sourcelink.json

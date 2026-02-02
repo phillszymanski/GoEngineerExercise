@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using StarshipAPI.Controllers;
 using StarshipAPI.Models;
+using StarshipAPI.Services;
 using Xunit;
 
 namespace StarshipAPI.Tests
@@ -12,16 +13,19 @@ namespace StarshipAPI.Tests
     {
         private readonly Mock<IStarshipService> _mockStarshipService;
         private readonly Mock<ILogger<StarshipController>> _mockLogger;
+        private readonly Mock<IAiSearchService> _aiSearchService;
         private readonly StarshipController _controller;
 
         public StarshipControllerTests()
         {
             _mockStarshipService = new Mock<IStarshipService>();
             _mockLogger = new Mock<ILogger<StarshipController>>();
+            _aiSearchService = new Mock<IAiSearchService>();
             
             _controller = new StarshipController(
                 _mockStarshipService.Object,
-                _mockLogger.Object
+                _mockLogger.Object,
+                _aiSearchService.Object
             );
         }
 

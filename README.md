@@ -53,6 +53,13 @@ This creates the database with two tables:
 - `Starships` - Starship data
 - `Users` - User authentication
 
+#### Configure Groq API key (optional)
+1. Go to https://console.groq.com and log in or register for an account
+2. Click API Keys > + Create API Key
+3. Copy the key into Groq:ApiKey in appsettings.json
+
+**Note**: The app will fall back to a basic text search if this step is not completed.
+
 #### Start the API Server
 
 ```bash
@@ -156,8 +163,8 @@ Coverage report will be in `StarshipClient/coverage/index.html`
 
 The project maintains high test coverage:
 
-- **Backend**:  97% line coverage, 90% branch coverage (Controllers, Services, Data Layer)
-- **Frontend**: 97% statement coverage, 96% branch coverage (Components, Hooks, Services)
+- **Backend**:  96% line coverage, 80% branch coverage (Controllers, Services, Data Layer)
+- **Frontend**: 96% statement coverage, 91% branch coverage (Components, Hooks, Services)
 
 Tests focus on:
 - Unit tests for individual components/services
@@ -234,3 +241,8 @@ sqllocaldb start mssqllocaldb
 - Clear browser cookies and restart both servers
 - Verify JWT secret is set in `appsettings.json`
 - Check browser console for detailed error messages
+
+### AI Search Not Working
+- AI search falls back to basic text search if Groq API key is missing/invalid
+- Check `appsettings.json` has valid `Groq:ApiKey` (optional)
+- Basic search still works without AI - searches name, model, manufacturer, class fields
